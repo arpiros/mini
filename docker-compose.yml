@@ -1,0 +1,12 @@
+version: "3.9"
+services:
+  php:
+    build:
+      context: .
+      dockerfile: ./docker/Dockerfile
+      target: local
+      args:
+        PHP_VERSION: 8.1.13-fpm
+        COMPOSER_VERSION: 2.4.4
+    volumes:
+      - ./:/product/mini
