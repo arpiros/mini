@@ -17,3 +17,4 @@ RUN apt update \
     && ln -snf /usr/share/zoneinfo/${TIMEZONE} /etc/localtime && echo ${TIMEZONE} > /etc/timezone
 
 COPY --from=composer /usr/bin/composer /usr/bin/composer
+COPY ./docker/php/*.ini /usr/local/etc/php/conf.d/
