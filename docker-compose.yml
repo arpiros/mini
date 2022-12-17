@@ -10,3 +10,9 @@ services:
         COMPOSER_VERSION: 2.4.4
     volumes:
       - ./:/product/mini
+  nginx:
+    image: nginx:latest
+    ports:
+      - "8080:80"
+    volumes:
+      - ./docker/nginx/default.conf:/etc/nginx/conf.d/default.conf
